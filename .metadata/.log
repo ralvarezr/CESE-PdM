@@ -2774,3 +2774,36 @@ Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 !ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-02 22:25:47.226
 !MESSAGE Started RMI Server, listening on port 41337
+!SESSION 2021-11-05 18:56:21.096 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-05 18:57:17.003
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-05 18:57:17.388
+!MESSAGE Log4j initialized with config file C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-05 18:58:06.311
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2021-11-05 21:27:42.835
+!MESSAGE Indexed 'Practica1' (98 sources, 161 headers) in 99,4 sec: 27.834 declarations; 84.773 references; 17 unresolved inclusions; 1.835 syntax errors; 5.044 unresolved names (4,3 %)
+!SESSION 2021-11-07 23:30:00.808 -----------------------------------------------
+eclipse.buildId=Version 1.7.0
+java.version=11.0.10
+java.vendor=AdoptOpenJDK
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_AR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2021-11-07 23:30:50.166
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2021-11-07 23:30:50.410
+!MESSAGE Log4j initialized with config file C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2021-11-07 23:31:34.770
+!MESSAGE Started RMI Server, listening on port 41337
