@@ -69,7 +69,8 @@ int main(void)
 	/* Infinite loop */
 	while (1)
 	{
-	
+
+		/* Actualizo el estado la MEF */
 		debounceUpdate();
 
 	}
