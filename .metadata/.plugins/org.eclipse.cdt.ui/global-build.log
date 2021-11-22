@@ -1,59 +1,41 @@
-19:14:15 **** Incremental Build of configuration Debug for project Practica2 ****
+15:00:00 **** Incremental Build of configuration Debug for project Ej2_uart ****
 make -j4 all 
-arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/Core/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
-arm-none-eabi-gcc -o "Practica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\Practica2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica2.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Ej2_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\Ej2_uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ej2_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ej2_uart.elf
  
-arm-none-eabi-size   Practica2.elf 
-arm-none-eabi-objdump -h -S  Practica2.elf  > "Practica2.list"
-arm-none-eabi-objcopy  -O binary  Practica2.elf  "Practica2.bin"
+arm-none-eabi-size   Ej2_uart.elf 
+arm-none-eabi-objdump -h -S  Ej2_uart.elf  > "Ej2_uart.list"
+arm-none-eabi-objcopy  -O binary  Ej2_uart.elf  "Ej2_uart.bin"
    text	   data	    bss	    dec	    hex	filename
-   7180	     36	   1628	   8844	   228c	Practica2.elf
+  12968	    132	   1668	  14768	   39b0	Ej2_uart.elf
 Finished building: default.size.stdout
  
-Finished building: Practica2.bin
-Finished building: Practica2.list
+Finished building: Ej2_uart.bin
  
+Finished building: Ej2_uart.list
  
-19:14:42 **** Incremental Build of configuration Debug for project Practica2 ****
+15:01:01 **** Incremental Build of configuration Debug for project Ej2_uart ****
 make -j4 all 
-arm-none-eabi-size   Practica2.elf 
+arm-none-eabi-size   Ej2_uart.elf 
    text	   data	    bss	    dec	    hex	filename
-   7180	     36	   1628	   8844	   228c	Practica2.elf
+  12968	    132	   1668	  14768	   39b0	Ej2_uart.elf
 Finished building: default.size.stdout
  
-19:16:13 **** Incremental Build of configuration Debug for project Practica2 ****
+15:04:28 **** Incremental Build of configuration Debug for project Ej2_uart ****
 make -j4 all 
-arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/Core/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
-arm-none-eabi-gcc -o "Practica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\Practica2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica2.elf
+arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
+arm-none-eabi-gcc -o "Ej2_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\Ej2_uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ej2_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Ej2_uart.elf
  
-arm-none-eabi-size   Practica2.elf 
-arm-none-eabi-objdump -h -S  Practica2.elf  > "Practica2.list"
-arm-none-eabi-objcopy  -O binary  Practica2.elf  "Practica2.bin"
+arm-none-eabi-size   Ej2_uart.elf 
+arm-none-eabi-objdump -h -S  Ej2_uart.elf  > "Ej2_uart.list"
+arm-none-eabi-objcopy  -O binary  Ej2_uart.elf  "Ej2_uart.bin"
    text	   data	    bss	    dec	    hex	filename
-   7180	     36	   1628	   8844	   228c	Practica2.elf
+  12964	    132	   1668	  14764	   39ac	Ej2_uart.elf
 Finished building: default.size.stdout
  
-Finished building: Practica2.bin
-Finished building: Practica2.list
+Finished building: Ej2_uart.bin
  
- 
-23:56:10 **** Incremental Build of configuration Debug for project Practica2 ****
-make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/Core/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc "../Drivers/API/src/API_debounce.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/Core/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Practica2/Drivers/API/inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/API/src/API_debounce.d" -MT"Drivers/API/src/API_debounce.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/API/src/API_debounce.o"
-arm-none-eabi-gcc -o "Practica2.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\Practica2\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Practica2.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Practica2.elf
- 
-arm-none-eabi-size   Practica2.elf 
-arm-none-eabi-objdump -h -S  Practica2.elf  > "Practica2.list"
-arm-none-eabi-objcopy  -O binary  Practica2.elf  "Practica2.bin"
-   text	   data	    bss	    dec	    hex	filename
-   7180	     36	   1628	   8844	   228c	Practica2.elf
-Finished building: default.size.stdout
- 
-Finished building: Practica2.bin
-Finished building: Practica2.list
- 
+Finished building: Ej2_uart.list
  

@@ -101,14 +101,23 @@ int main(void)
   }
 
   /* Output a message on Hyperterminal using printf function */
-  printf("\n\r UART Printf Example: retarget the C library printf function to the UART\n\r");
-  printf("** Test finished successfully. ** \n\r");
+  //printf("\n\r UART Printf Example: retarget the C library printf function to the UART\n\r");
+  //printf("** Test finished successfully. ** \n\r");
+
+  HAL_StatusTypeDef estado;
+
+  uint8_t c[] = 'Hola Mundo';
+
+  estado = HAL_UART_Transmit(&UartHandle, &c, 4, 1000);
+
 
   /* Infinite loop */
   while (1)
   {
-	  BSP_LED_Toggle(LED3);
-	  HAL_Delay(100);
+
+	  BSP_LED_Toggle(LED2);
+	  HAL_Delay(200);
+
   }
 }
 

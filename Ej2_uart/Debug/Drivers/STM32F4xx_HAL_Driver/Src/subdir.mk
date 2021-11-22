@@ -46,6 +46,7 @@ C_SRCS += \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c \
+../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c \
 ../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c \
@@ -139,6 +140,7 @@ OBJS += \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.o \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.o \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.o \
@@ -232,6 +234,7 @@ C_DEPS += \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.d \
+./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.d \
 ./Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.d \
@@ -286,5 +289,5 @@ C_DEPS += \
 
 # Each subdirectory must supply rules for building sources it contributes
 Drivers/STM32F4xx_HAL_Driver/Src/%.o: ../Drivers/STM32F4xx_HAL_Driver/Src/%.c Drivers/STM32F4xx_HAL_Driver/Src/subdir.mk
-	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"/home/pato/Embebidos/CESE/PdM_workspace/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"/home/pato/Embebidos/CESE/PdM_workspace/Ej2_uart/Drivers/CMSIS/Include" -I"/home/pato/Embebidos/CESE/PdM_workspace/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"/home/pato/Embebidos/CESE/PdM_workspace/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"/home/pato/Embebidos/CESE/PdM_workspace/Ej2_uart/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
+	arm-none-eabi-gcc "$<" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "$@"
 
