@@ -1,20 +1,10 @@
-15:04:28 **** Incremental Build of configuration Debug for project Ej2_uart ****
+20:01:49 **** Incremental Build of configuration Debug for project Ej2_uart ****
 make -j4 all 
-arm-none-eabi-gcc "../Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DSTM32 -DSTM32F429ZITx -DSTM32F4 -DNUCLEO_F429ZI -DUSE_HAL_DRIVER -DSTM32F429xx -c -I../Inc -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/STM32F4xx_HAL_Driver/Inc" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/CMSIS/Device/ST/STM32F4xx/Include" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/BSP/STM32F4xx_Nucleo_144" -I"C:/Users/eriik/Desktop/Ricardo/Postgrado/CESE/Materias/01 - Programacion Microcontroladores/CESE-PdM/Ej2_uart/Drivers/Core/Inc" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Src/main.d" -MT"Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Src/main.o"
-arm-none-eabi-gcc -o "Ej2_uart.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\eriik\Desktop\Ricardo\Postgrado\CESE\Materias\01 - Programacion Microcontroladores\CESE-PdM\Ej2_uart\STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ej2_uart.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: Ej2_uart.elf
- 
 arm-none-eabi-size   Ej2_uart.elf 
-arm-none-eabi-objdump -h -S  Ej2_uart.elf  > "Ej2_uart.list"
-arm-none-eabi-objcopy  -O binary  Ej2_uart.elf  "Ej2_uart.bin"
    text	   data	    bss	    dec	    hex	filename
-  12964	    132	   1668	  14764	   39ac	Ej2_uart.elf
+  12992	    132	   1668	  14792	   39c8	Ej2_uart.elf
 Finished building: default.size.stdout
  
-Finished building: Ej2_uart.bin
- 
-Finished building: Ej2_uart.list
- 
 
-15:04:35 Build Finished. 0 errors, 0 warnings. (took 6s.562ms)
+20:01:58 Build Finished. 0 errors, 0 warnings. (took 9s.94ms)
 
