@@ -8,7 +8,7 @@
 #include "API_led.h"
 
 
-
+#define TIEMPO_INICIAL 500		/* Tiempo Inicial del delay */
 
 /*
  * Estructura interna led_s
@@ -31,7 +31,7 @@ void ledInit(led_t* self, Led_TypeDef color)
 	BSP_LED_Init(self->color);
 
 	/* Inicializo el delay de led en 500ms */
-	delayInit(&(self->delay), (tick_t)500);
+	delayInit(&(self->delay), (tick_t)TIEMPO_INICIAL);
 
 	/* Enciendo el led */
 	BSP_LED_On(self->color);
