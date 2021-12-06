@@ -21,7 +21,7 @@ typedef enum
 {
 	VERDE = LED_GREEN,
 	AZUL = LED_BLUE,
-	RED = LED_RED
+	ROJO = LED_RED
 }led_color_t;
 
 /* Definición de la estructura led_t */
