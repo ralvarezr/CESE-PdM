@@ -31,7 +31,7 @@ void ledInit(led_t* self, Led_TypeDef color)
 	BSP_LED_Init(self->color);
 
 	/* Inicializo el delay de led en 500ms */
-	delayInit(&(self->delay), (tick_t)1000);
+	delayInit(&(self->delay), (tick_t)500);
 
 	/* Enciendo el led */
 	BSP_LED_On(self->color);
@@ -65,7 +65,9 @@ void ledStopBlinking(led_t* self)
 {
 	/* Apago el led */
 	BSP_LED_Off(self->color);
-	//delayWrite(&(self->delay), (tick_t)0);
+	/* Detengo el delay del led*/
+	delayStop(&(self->delay));
+
 }
 
 
