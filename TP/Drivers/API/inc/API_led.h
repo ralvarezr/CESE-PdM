@@ -11,7 +11,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include "stm32f4xx_nucleo_144.h"	/* Para los enum de los Leds */
-#include "API_delay.h"				/* Para el temporizador del led */
+#include "API_delay.h"				/* Para el temporizador del led  y el tipo tick_t*/
 
 /* Redefinición de bool */
 typedef bool bool_t;
@@ -37,7 +37,6 @@ typedef struct led_s
 /*
  * Inicia el led asignando el color y el tiempo de parpadeo de 500ms por defecto.
  * Recibe el led a inicializar y el color.
- * Devuelve true en caso de éxito y false en caso de error.
  * */
 void ledInit(led_t* led, Led_TypeDef color);
 
@@ -45,7 +44,7 @@ void ledInit(led_t* led, Led_TypeDef color);
  * Establece el tiempo de parpadeo del led.
  * Recibe el led y el tiempo a establecer.
  * */
-void ledSetBlinkDuration(led_t* led, uint32_t time);
+void ledSetBlinkDuration(led_t* led, tickt_t time);
 
 /*
  * Inicia el parpadeo del led.
