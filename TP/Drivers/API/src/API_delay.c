@@ -30,3 +30,8 @@ void delayWrite(delay_t * delay, tick_t duration)
 {
     delay->duration = duration;
 }
+
+void delayStop(delay_t* delay)
+{
+	delay->running = false;
+}

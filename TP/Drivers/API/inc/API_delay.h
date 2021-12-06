@@ -21,5 +21,7 @@ bool_t delayRead(delay_t * delay);
 
 void delayWrite(delay_t * delay, tick_t duration);
 
+void delayStop(delay_t* delay);
+
 
 #endif /* __API_DELAY_H */
