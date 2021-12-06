@@ -64,8 +64,8 @@ void ledUpdate(led_t* self)
 void ledStopBlinking(led_t* self)
 {
 	/* Apago el led */
-	//BSP_LED_Off(self->color);
-	delayWrite(&(self->delay), (tick_t)0);
+	BSP_LED_Off(self->color);
+	//delayWrite(&(self->delay), (tick_t)0);
 }
 
 
