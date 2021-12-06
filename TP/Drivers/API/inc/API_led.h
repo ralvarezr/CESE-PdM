@@ -44,7 +44,7 @@ void ledInit(led_t* led, Led_TypeDef color);
  * Establece el tiempo de parpadeo del led.
  * Recibe el led y el tiempo a establecer.
  * */
-void ledSetBlinkDuration(led_t* led, tickt_t time);
+void ledSetBlinkDuration(led_t* led, tick_t time);
 
 /*
  * Inicia el parpadeo del led.
