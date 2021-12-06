@@ -39,10 +39,10 @@ void ledInit(led_t* self, Led_TypeDef color)
 }
 
 
-void ledSetBlinkDuration(led_t* self, uint32_t time)
+void ledSetBlinkDuration(led_t* self, tick_t time)
 {
 	/* Sobreescribo el tiempo del delay. */
-	delayWrite(&(self->delay), (tick_t)time);
+	delayWrite(&(self->delay), time);
 }
 
 
