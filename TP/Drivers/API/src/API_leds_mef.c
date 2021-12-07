@@ -7,7 +7,7 @@
 
 
 #include "API_leds_mef.h"
-#include "API_led.h"
+#include "API_led.h"		/* Para usar los leds. */
 
 /* Estados de la MEF */
 typedef enum
