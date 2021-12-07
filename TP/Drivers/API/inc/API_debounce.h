@@ -5,14 +5,27 @@
  *      Author: Ricardo Alvarez
  */
 
-#ifndef API_INC_API_DEBOUNCE_H_
-#define API_INC_API_DEBOUNCE_H_
+#ifndef API_DEBOUNCE_H_
+#define API_DEBOUNCE_H_
 
-#include "API_delay.h"	/* Para bool_t */
+#include <stdbool.h>
+
+typedef bool bool_t;
 
 
-// Prototipos de funciones
-bool_t debounceInit(void);
+/*
+ * Inicializa el antirebote.
+ * */
+void debounceInit(void);
+
+/*
+ * Actualiza el estado del antirrebote.
+ * */
 void debounceUpdate(void);
+
+/*
+ * Devuelve true si el botón está siendo presionado o false si está suelto.
+ * */
+bool_t buttonPressed(void);
 
 #endif /* API_INC_API_DEBOUNCE_H_ */
