@@ -106,17 +106,29 @@ int main(void)
 
   HAL_StatusTypeDef estado;
 
-  uint8_t c[] = 'Hola Mundo';
+  uint8_t c[] = "\n\rHola Mundo\n\r";
 
-  estado = HAL_UART_Transmit(&UartHandle, &c, 4, 1000);
+  estado = HAL_UART_Transmit(&UartHandle, c, sizeof(c), 1000);
 
+  if(estado == HAL_TIMEOUT)
+  {
+	  BSP_LED_On(LED1);
+  }
 
+  uint8_t cadena[2];
   /* Infinite loop */
   while (1)
   {
 
+	  estado = HAL_UART_Receive(&UartHandle, cadena, sizeof(cadena), 10);
+
+	  if(HAL_OK == estado)
+	  {
+		  printf("Recibi algo\n\r");
+	  }
+
 	  BSP_LED_Toggle(LED2);
-	  HAL_Delay(200);
+
 
   }
 }
