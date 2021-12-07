@@ -47,16 +47,10 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   if (huart->Instance == USART3)
   {
-    /* Transmit one byte with 100 ms timeout */
-   // HAL_UART_Transmit(&UartHandle, &byte, 1, 100);
-	  char buffer[30];
-	  	sprintf(buffer, "Recibí: %c\n\r", byte);
 
-	  	/* Imprimo la cadena. */
-	  	uartSendString((uint8_t *)buffer);
-
-    /* Receive one byte in interrupt mode */
+    /* Recibo un byte en modo interrupción */
     HAL_UART_Receive_IT(&UartHandle, &byte, 1);
+
   }
 }
 
@@ -65,6 +59,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 bool_t uartInit(void)
 {
 
+	/* Se configuran los parámetros de la UART. */
 	UartHandle.Instance        = USARTx;
 	UartHandle.Init.BaudRate   = 9600;
 	UartHandle.Init.WordLength = UART_WORDLENGTH_8B;
@@ -78,12 +73,6 @@ bool_t uartInit(void)
 	if (HAL_UART_Init(&UartHandle) != HAL_OK)
 		return false;
 
-	/* Defino la cadena para imprimir el baud rate. */
-	/*char buffer[30];
-	sprintf(buffer, "BAUD RATE: %ld\n\r", UartHandle.Init.BaudRate);*/
-
-	/* Imprimo la cadena. */
-	/*uartSendString((uint8_t *)buffer);*/
 
 	/* Inicializo la interrupcion */
 	HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
