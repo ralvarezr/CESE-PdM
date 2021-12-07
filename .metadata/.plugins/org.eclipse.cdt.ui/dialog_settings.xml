@@ -29,6 +29,14 @@
 		<item key="caseSensitive" value="false"/>
 		<item key="searchFlags" value="227191"/>
 		<list key="previousPatterns">
+			<item value="UART_IRQHandler"/>
+			<item value="HAL_UART_IRQHandler"/>
+			<item value="USART3_IRQHandler"/>
+			<item value="HAL_UART_Receive_IT"/>
+			<item value="RxCpltCallback"/>
+			<item value="HAL_NVIC_SetPriority"/>
+			<item value="HAL_NVIC"/>
+			<item value="USART1_IRQHandler"/>
 			<item value="HAL_StatusTypeDef"/>
 		</list>
 	</section>
