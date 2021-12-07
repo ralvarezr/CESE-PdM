@@ -1,16 +1,21 @@
 #include "API_delay.h"
 #include "stm32f4xx_hal.h"
-
+#include <assert.h>
 
 void delayInit(delay_t * delay, tick_t duration)
 {
+	assert(delay != NULL);
+	assert(duration >= 0);
+
     delay->duration = duration;
     delay->running = false;
 }
 
 bool_t delayRead(delay_t * delay)
 {
-    bool_t ret_val = false;
+    assert(delay != NULL);
+
+	bool_t ret_val = false;
 
     if(!(delay->running))
     {
@@ -28,10 +33,16 @@ bool_t delayRead(delay_t * delay)
 
 void delayWrite(delay_t * delay, tick_t duration)
 {
-    delay->duration = duration;
+
+	assert(delay != NULL);
+	assert(duration >= 0);
+
+	delay->duration = duration;
 }
 
 void delayStop(delay_t* delay)
 {
+	assert(delay != NULL);
+
 	delay->running = false;
 }
