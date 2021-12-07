@@ -41,10 +41,5 @@ bool_t uartSendString(uint8_t *pstring);
  *  */
 uint8_t uartGetBuffer(void);
 
-/*
- * Limpia el buffer de la UART.
- * Debe usarse luego de leer el valor de buffer.
- * */
-void uartCleanBuffer(void);
 
 #endif /* __API_UART_H_ */

@@ -108,10 +108,10 @@ bool_t uartSendString(uint8_t *pstring)
 
 uint8_t uartGetBuffer(void)
 {
-	return byte;
-}
+	/* Devuelvo el valor del buffer y lo limpio */
+	uint8_t retval = byte;
 
-void uartCleanBuffer(void)
-{
 	byte = 0;
+
+	return retval;
 }
