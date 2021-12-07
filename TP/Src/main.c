@@ -20,8 +20,8 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-//#include "API_debounce.h"
-#include "API_led.h"
+
+#include "API_menu.h" 		/* Para el menú interactivo */
 
 /** @addtogroup STM32F4xx_HAL_Examples
  * @{
@@ -62,37 +62,19 @@ int main(void)
 	/* Configure the system clock to 180 MHz */
 	SystemClock_Config();
 
-	/*bool_t ret_val;
-
-	ret_val = debounceInit();
-	if(false == ret_val)
+	/* Inicializo el menú */
+	if(menuInit() == false)
 	{
 		Error_Handler();
-	}*/
+	}
 
-	/* Creo el led */
-	led_t verde;
 
-	ledInit(&verde, VERDE);
-
-	ledStartBlinking(&verde);
-
-	int i = 0;
-
-	/* Infinite loop */
 	while (1)
 	{
-		//debounceUpdate();
-		ledUpdate(&verde);
-		i++;
-		if(2000000 == i)
-		{
-			ledSetBlinkDuration(&verde, 50);
-		}
-		if(20000000 == i)
-		{
-			ledStopBlinking(&verde);
-		}
+
+		/* Actualizo el Menú */
+		menuUpdate();
+
 	}
 }
 
