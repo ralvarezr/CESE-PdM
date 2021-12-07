@@ -8,6 +8,7 @@
 #include "API_uart.h"
 #include "stm32f4xx_hal.h"	/* Para las funciones de la HAL */
 #include <stdio.h>			/* Para sprintf */
+#include "stm32f4xx_hal_cortex.h" /* Para inicializar las interrupciones */
 
 /* Definition for USARTx clock resources */
 #define USARTx                           USART3
@@ -26,10 +27,42 @@
 #define USARTx_RX_GPIO_PORT              GPIOD
 #define USARTx_RX_AF                     GPIO_AF7_USART3
 
-//Se declara el Handler de la UART.
+/*Se declara el Handler de la UART */
 static UART_HandleTypeDef UartHandle;
 
-bool_t uartInit()
+
+/* Buffer de Recepción por Interrupción */
+static uint8_t byte = 0;
+
+//****************** FUNCIONES USADAS POR EL SISTEMA **********************
+
+/* UART3 Interrupt Service Routine */
+void USART3_IRQHandler(void)
+{
+  HAL_UART_IRQHandler(&UartHandle);
+}
+
+/* Callback llamado por HAL_UART_IRQHandler cuando el número de bytes es recibido */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+  if (huart->Instance == USART3)
+  {
+    /* Transmit one byte with 100 ms timeout */
+   // HAL_UART_Transmit(&UartHandle, &byte, 1, 100);
+	  char buffer[30];
+	  	sprintf(buffer, "Recibí: %c\n\r", byte);
+
+	  	/* Imprimo la cadena. */
+	  	uartSendString((uint8_t *)buffer);
+
+    /* Receive one byte in interrupt mode */
+    HAL_UART_Receive_IT(&UartHandle, &byte, 1);
+  }
+}
+
+//****************************************************************************
+
+bool_t uartInit(void)
 {
 
 	UartHandle.Instance        = USARTx;
@@ -46,19 +79,24 @@ bool_t uartInit()
 		return false;
 
 	/* Defino la cadena para imprimir el baud rate. */
-	char buffer[30];
-	sprintf(buffer, "BAUD RATE: %ld\n\r", UartHandle.Init.BaudRate);
+	/*char buffer[30];
+	sprintf(buffer, "BAUD RATE: %ld\n\r", UartHandle.Init.BaudRate);*/
 
 	/* Imprimo la cadena. */
-	uartSendString((uint8_t *)buffer);
+	/*uartSendString((uint8_t *)buffer);*/
+
+	/* Inicializo la interrupcion */
+	HAL_NVIC_SetPriority(USART3_IRQn, 0, 0);
+	HAL_NVIC_EnableIRQ(USART3_IRQn);
+	HAL_UART_Receive_IT(&UartHandle, &byte, 1);
 
 	return true;
 }
 
 bool_t uartSendString(uint8_t *pstring)
 {
-	/* En caso de que sea nulo el puntero o el handle no haya sido inicializado, devuelvo false*/
-	if((pstring == NULL) || (HAL_UART_GetState(&UartHandle) != HAL_UART_STATE_READY))
+	/* En caso de que sea nulo el puntero devuelvo false */
+	if((pstring == NULL))
 		return false;
 
 	/* Busco la cantidad de bytes de la cadena, tiene un límite de hasta 100 bytes */
@@ -72,25 +110,19 @@ bool_t uartSendString(uint8_t *pstring)
 	HAL_StatusTypeDef ret_val;
 
 	/* Trasmito el mensaje y verifico que se haya enviado correctamente. */
-	ret_val = HAL_UART_Transmit(&UartHandle, pstring, i, 0xFFFF);
+	ret_val = HAL_UART_Transmit(&UartHandle, pstring, i, 100);
 	if(ret_val != HAL_OK)
 		return false;
 
 	return true;
 }
 
-bool_t uartSendStringSize(uint8_t *pstring, uint16_t size)
+uint8_t uartGetBuffer(void)
 {
-	/* En caso de que sea nulo el puntero, el handle no haya sido inicializado, o el tamaño es menor o igual a 0, devuelvo false*/
-	if((pstring == NULL) || (HAL_UART_GetState(&UartHandle) != HAL_UART_STATE_READY) || size <= 0)
-		return false;
+	return byte;
+}
 
-	HAL_StatusTypeDef ret_val;
-
-	/* Trasmito el mensaje y verifico que se haya enviado correctamente. */
-	ret_val = HAL_UART_Transmit(&UartHandle, pstring, size, 0xFFFF);
-	if(ret_val != HAL_OK)
-		return false;
-
-	return true;
+void uartCleanBuffer(void)
+{
+	byte = 0;
 }
