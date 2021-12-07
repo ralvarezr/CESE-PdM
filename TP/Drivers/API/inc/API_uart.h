@@ -29,12 +29,10 @@ typedef bool bool_t;
 bool_t uartInit(void);
 
 /*
- * Envía un el mensaje por la UART.
+ * Envía un el mensaje por la UART, hasta un máximo de 100 caracteres.
  * pstring es la cadena que se enviará.
- *
- * Devuelve true si se envío correctamente, o false en caso de error.
  * */
-bool_t uartSendString(uint8_t *pstring);
+void uartSendString(uint8_t *pstring);
 
 /*
  * Devuelve el byte recbido por la UART.

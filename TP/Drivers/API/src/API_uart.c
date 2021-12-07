@@ -9,6 +9,7 @@
 #include "stm32f4xx_hal.h"	/* Para las funciones de la HAL */
 #include <stdio.h>			/* Para sprintf */
 #include "stm32f4xx_hal_cortex.h" /* Para inicializar las interrupciones */
+#include <assert.h>				/* Para verificaciones */
 
 /* Definition for USARTx clock resources */
 #define USARTx                           USART3
@@ -82,28 +83,21 @@ bool_t uartInit(void)
 	return true;
 }
 
-bool_t uartSendString(uint8_t *pstring)
+void uartSendString(uint8_t *pstring)
 {
-	/* En caso de que sea nulo el puntero devuelvo false */
-	if((pstring == NULL))
-		return false;
+	/* Verifico el puntero recibido */
+	assert(pstring != NULL);
 
 	/* Busco la cantidad de bytes de la cadena, tiene un límite de hasta 100 bytes */
 	uint16_t i = 0;
 	for(; pstring[i]; i++)
-	{
-		if(i >= 100)
-			return false;
-	}
+	;
 
-	HAL_StatusTypeDef ret_val;
+	assert(i <= 100);
 
-	/* Trasmito el mensaje y verifico que se haya enviado correctamente. */
-	ret_val = HAL_UART_Transmit(&UartHandle, pstring, i, 100);
-	if(ret_val != HAL_OK)
-		return false;
+	/* Trasmito el mensaje */
+	HAL_UART_Transmit(&UartHandle, pstring, i, 100);
 
-	return true;
 }
 
 uint8_t uartGetBuffer(void)
