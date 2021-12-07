@@ -10,17 +10,6 @@
 
 #define TIEMPO_INICIAL 500		/* Tiempo Inicial del delay */
 
-/*
- * Estructura interna led_s
- * Contiene el color de led y su delay correspondiente.
- * */
-/*struct led_s
-{
-	Led_TypeDef color;
-	delay_t delay;
-};*/
-
-
 
 void ledInit(led_t* self, Led_TypeDef color)
 {
